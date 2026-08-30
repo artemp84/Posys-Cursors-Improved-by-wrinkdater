@@ -100,6 +100,13 @@ usage: linux_convertor.ps1 my_custom_set # or dont put anything and it'll try an
 
 ## Changelog:
 
+2026-08-30 (fork) by artemp84 (with Hermes-agent):
+- improved `linux_install.sh` and `x11_install.sh` with input validation, usage help and theme listing;
+- scripts now resolve paths relative to their own location (can be run from any directory);
+- smart config patching — replaces existing cursor entries in `.Xresources`, GTK `settings.ini` (3.0 and 4.0) and `~/.icons/default/index.theme` instead of blindly appending;
+- cursor theme is synced across X11, GTK, Qt and Electron apps by setting the default theme, GTK cursor theme and `XCURSOR_THEME` / `XCURSOR_SIZE` env vars;
+- env vars are written to the first existing shell config file in priority order: `.xprofile` → `.profile` → `.zprofile` → `.bashrc` → `.zshrc`, so WM setups like Awesome/LightDM pick them up correctly.
+
 2025-04-25 (v1.92) by wrinkdater:
 - added Wrong Finger cursors for pin and person in Extras.
 
