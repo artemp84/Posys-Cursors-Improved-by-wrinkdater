@@ -136,7 +136,7 @@ get-childitem $rename_path | foreach-object {
 
 		} elseif ($_.name.tolower() -like "*ns*") {
 			$new_name = "sb_v_double_arrow"
-            $symlinks = @("n-resize", "s-resize", "v_double_arrow", "ew-resize")
+            $symlinks = @("n-resize", "s-resize", "v_double_arrow", "ns-resize")
 
 		} elseif ($_.name.tolower() -like "*nesw*") {
 			$new_name = "size_bdiag"
